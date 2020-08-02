@@ -15,7 +15,13 @@
 
 <div class="latlong-container">
     <ng-template [ngIf]="pointerClick?.length > 0" [ngIfElse]="none">
-        <p>There were <strong>{{ pointerClick.length }}</strong> pointing clicks</p>
+        <p>There are <strong>{{ pointerClick.length }}</strong> pointing clicks</p>
+
+        <ul>
+            <li *ngFor="let latLng of pointerClick; index as i">
+                {{ i }}. Point({{ latLng.lat }}, {{ latLng.lng }}) 
+            </li>
+        </ul>
     </ng-template>
 
     <ng-template #none>

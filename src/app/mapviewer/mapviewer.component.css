@@ -4,12 +4,21 @@
 }
 
 .latlong-container {
-    padding: 1em;
-    border: 1px solid lightgray;
-    margin-bottom: .8em;
+  padding: 1em;
+  border: 1px solid lightgray;
+  margin-bottom: .8em;
 }
 
 .latlong-container strong {
-    font-weight: bold;
-    color: gray;
+  font-weight: bold;
+  color: gray;
+}
+
+.latlong-container ul {
+  list-style-type: none;
+  color: gray;
+}
+
+.latlong-container li {
+  font-size: small;
 }

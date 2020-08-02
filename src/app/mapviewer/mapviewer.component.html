@@ -3,5 +3,22 @@
 <div id="map"
      leaflet
      (leafletMapReady)="onMapReady($event)"
+     (leafletMouseMove)="onMouseMove($event)"
+     (leafletClick)="onMouseClick($event)"
      [leafletOptions]="mapOptions">
+</div>
+
+<div class="latlong-container">
+    <p>Latitude: <strong>{{ pointerLat }}</strong></p>
+    <p>Longitude: <strong>{{ pointerLong }}</strong></p>
+</div>
+
+<div class="latlong-container">
+    <ng-template [ngIf]="pointerClick?.length > 0" [ngIfElse]="none">
+        <p>There were <strong>{{ pointerClick.length }}</strong> pointing clicks</p>
+    </ng-template>
+
+    <ng-template #none>
+        <p>There are no points clicked</p>
+    </ng-template>
 </div>

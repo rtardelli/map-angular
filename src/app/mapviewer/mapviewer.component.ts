@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { latLng, MapOptions, tileLayer, Map, Marker, icon } from 'leaflet';
+import { latLng, MapOptions, tileLayer, Map, Marker, icon, LeafletMouseEvent, LatLng } from 'leaflet';
 
 @Component({
   selector: 'app-mapviewer',
@@ -10,6 +10,11 @@ export class MapviewerComponent implements OnInit {
 
   map: Map;
   mapOptions: MapOptions;
+
+  pointerLat: number;
+  pointerLong: number;
+
+  pointerClick: LatLng[] = [];
 
   constructor() { }
 
@@ -39,7 +44,7 @@ export class MapviewerComponent implements OnInit {
   }
 
   private addSampleMarker() {
-    const marker = new Marker([51.51, 0])
+    const marker = new Marker([-22.934172, -43.019888])
       .setIcon(
         icon({
           iconSize: [25, 41],
@@ -47,5 +52,22 @@ export class MapviewerComponent implements OnInit {
           iconUrl: 'assets/marker-icon.png'
         }));
     marker.addTo(this.map);
+  }
+
+  /**
+   * Ação de movimento do mouse no mapa
+   * @param event Evento de clique
+   */
+  onMouseMove(event: LeafletMouseEvent) {
+    this.pointerLat = event.latlng.lat
+    this.pointerLong = event.latlng.lng
+  }
+
+  /**
+   * Ação de clique do mouse no mapa
+   * @param event Evento de clique
+   */
+  onMouseClick(event: LeafletMouseEvent) {
+    this.pointerClick.push(event.latlng);
   }
 }

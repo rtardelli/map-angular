@@ -1,0 +1,15 @@
+#map {
+  height: 500px;
+  margin-bottom: 1rem;
+}
+
+.latlong-container {
+  padding: 1em;
+  border: 1px solid lightgray;
+  margin-bottom: .8em;
+}
+
+.latlong-container strong {
+  font-weight: bold;
+  color: gray;
+}

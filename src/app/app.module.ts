@@ -10,13 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { from } from 'rxjs';
 import { MapviewerComponent } from './mapviewer/mapviewer.component';
+import { MapLoaderComponent } from './map-loader/map-loader.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListComponent,
-    MapviewerComponent
+    MapviewerComponent,
+    MapLoaderComponent
   ],
   imports: [
     BrowserModule,

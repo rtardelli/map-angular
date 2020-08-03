@@ -1,0 +1,18 @@
+<h1>MapLoader</h1>
+
+<div id="map"
+     leaflet
+     (leafletMapReady)="onMapReady($event)"
+     (leafletMouseMove)="onMouseMove($event)"
+     [leafletOptions]="mapOptions">
+</div>
+
+<div class="latlong-container">
+    <input style="display: none" type="file" (change)="uploadFile($event.target.files)" #hiddenfileinput>
+    <button (click)="hiddenfileinput.click()">Carregar KML</button>
+</div>
+
+<div class="latlong-container">
+    <p>Latitude: <strong>{{ pointerLat }}</strong></p>
+    <p>Longitude: <strong>{{ pointerLong }}</strong></p>
+</div>
